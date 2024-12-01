@@ -1,13 +1,83 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Layout container */
+.layout-container {
+  padding-top: 60px; /* Ensure there's enough space below the navbar */
+  display: flex; /* Ensures the children are in a row by default */
+  flex-wrap: wrap; /* Allows the children to wrap onto the next line if needed */
+  /*gap: 10px; /* Space between the sections */
+}
+
+/* Left Section */
+.left {
+  background-color: #2196F3;
+  padding: 20px;
+  flex: 0 0 20%; /* Set the left section to 20% of the width */
+}
+
+/* Centre Section */
+.centre {
+  background-color: #f1f1f1;
+  padding: 20px;
+  flex: 0 0 60%; /* Set the centre section to 60% of the width */
+}
+
+/* Right Section */
+.right {
+  background-color: #04AA6D;
+  padding: 20px;
+  flex: 0 0 20%; /* Set the right section to 20% of the width */
+}
+
+/* Media Query for screen widths of 800px or smaller */
+@media screen and (max-width: 800px) {
+  .left,
+  .centre,
+  .right {
+    flex: 0 0 100%; /* Make all sections full width when the screen is smaller than 800px */
+  }
+}
+
+.merienda-400 {
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.merienda-600 {
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+.merienda-600-anim {
+  font-family: "Merienda", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  transition: font-weight 1s ease-in-out; /* Transition to and from weight */
+}
+
+.animate-weight {
+  animation: weightChange 1s forwards;
+}
+
+/* Keyframe animation for font-weight change */
+@keyframes weightChange {
+  0% {
+    font-weight: 300;
+  }
+  50% {
+    font-weight: 800;
+  }
+  100% {
+    font-weight: 600;
+  }
 }
