@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import Left from './components/Left';
 import Right from './components/Right';
-import Home from './components/Pages/Home';
-import About from './components/Pages/About';
-import Contact from './components/Pages/Contact';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import Resume from './Pages/Resume';
+import Blog from './Pages/Blog';
 import Navbar from './components/Navbar';
 
 
@@ -28,6 +30,8 @@ class App extends Component {
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
             </Routes>
             <Right />

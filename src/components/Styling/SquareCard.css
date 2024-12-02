@@ -1,0 +1,29 @@
+.square-card {
+    width: 100%;
+    max-width: 300px; /* Adjust the max-width for the square card size */
+    margin: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .square-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .square-card-title {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .square-card-description {
+    font-size: 1rem;
+    color: #555;
+    padding: 0 10px 20px;
+  }
+  
