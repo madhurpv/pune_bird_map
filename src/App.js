@@ -8,6 +8,8 @@ import Resume from './Pages/Resume';
 import Blog from './Pages/Blog';
 import Navbar from './components/Navbar';
 
+import Blog1 from './Pages/Blog/Blog1';
+
 
 import { BrowserRouter as Router, Routes, Route,} from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -33,6 +35,7 @@ class App extends Component {
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/blog1" element={<Blog1 />} />
             </Routes>
             <Right />
 

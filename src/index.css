@@ -10,6 +10,7 @@
   display: flex; /* Ensures the children are in a row by default */
   flex-wrap: wrap; /* Allows the children to wrap onto the next line if needed */
   /*gap: 10px; /* Space between the sections */
+  position: relative;
 }
 
 /* Left Section */
@@ -17,7 +18,12 @@
   background-color: #2196F3;
   padding: 20px;
   flex: 0 0 20%; /* Set the left section to 20% of the width */
+  position: sticky;
+  top: 60px; /* Adjust to the navbar height */
+  left: 0;
+  height: 100vh /* Full viewport height */
 }
+
 
 /* Centre Section */
 .centre {
@@ -31,10 +37,20 @@
   background-color: #04AA6D;
   padding: 20px;
   flex: 0 0 20%; /* Set the right section to 20% of the width */
+  position: sticky;
+  top: 60px; /* Adjust to the navbar height */
+  height: 100vh /* Full viewport height */
 }
 
 /* Media Query for screen widths of 800px or smaller */
 @media screen and (max-width: 800px) {
+  .left,
+  .right {
+    height: 80px; /* Make all sections full width when the screen is smaller than 800px */
+    position:inherit;
+    top: 0px;
+  }
+
   .left,
   .centre,
   .right {

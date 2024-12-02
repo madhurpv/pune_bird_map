@@ -9,12 +9,15 @@ class CardContainer extends Component {
     return (
       <div className="card-container">
         {cards.map((card, index) => (
-          <SquareCard 
-            key={index}
-            image={card.image}
-            title={card.title}
-            description={card.description}
-          />
+          <a href={card.link} style={{textDecoration: "none"}}>
+            <SquareCard 
+              key={index}
+              image={card.image}
+              title={card.title}
+              description={card.description}
+              link={card.link}
+            />
+          </a>
         ))}
       </div>
     );
