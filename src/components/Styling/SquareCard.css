@@ -5,7 +5,8 @@
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  text-align: left;
+  padding: 0px;
 }
 
 .square-card-image {
@@ -18,12 +19,20 @@
 }
 
 
-/* Title style: ensure no underline */
 .square-card-title {
-  margin: 10px 0;
-  font-size: 1.2rem;
+  margin: 10px 0px 0px;
+  font-size: 1.6em;
   font-weight: bold;
   color: black;
+  padding: 0 10px;
+  text-decoration: none; /* Make sure title doesn't get underlined */
+}
+
+/* Title style: ensure no underline */
+.square-card-type {
+  margin: 10px 0;
+  font-size: 1.2em;
+  padding: 0 10px;
   text-decoration: none; /* Make sure title doesn't get underlined */
 }
 

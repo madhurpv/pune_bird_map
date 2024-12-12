@@ -15,6 +15,8 @@ class CardContainer extends Component {
               image={card.image}
               title={card.title}
               description={card.description}
+              blogtype={card.blogtype}
+              typecolour={card.typecolour}
               link={card.link}
             />
           </a>
