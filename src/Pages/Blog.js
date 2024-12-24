@@ -32,6 +32,13 @@ const cardsData = [
     blogtype: 'Travel',
     description: 'This is the fourth card description.',
     link: '/blog1'
+  },
+  {
+    image: 'https://via.placeholder.com/300',
+    title: 'Card 5',
+    blogtype: 'Travel',
+    description: 'This is the fourth card description.',
+    link: '/blog1'
   }
 ];
 
