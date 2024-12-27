@@ -3,9 +3,6 @@ import Left from './components/Left';
 import Right from './components/Right';
 import Home from './Pages/Home';
 import About from './Pages/About';
-import Contact from './Pages/Contact';
-import Resume from './Pages/Resume';
-import Blog from './Pages/Blog';
 import Navbar from './components/Navbar';
 
 import Blog1 from './Pages/Blog/Blog1';
@@ -32,10 +29,6 @@ class App extends Component {
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/resume" element={<Resume />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/blog1" element={<Blog1 />} />
             </Routes>
             <Right />
 
