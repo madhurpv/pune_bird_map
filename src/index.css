@@ -15,48 +15,60 @@
 
 /* Left Section */
 .left {
-  background-color: #2196F3;
+  background-color: #3b444a;
   padding: 20px;
   flex: 0 0 20%; /* Set the left section to 20% of the width */
   position: sticky;
   top: 60px; /* Adjust to the navbar height */
   left: 0;
-  height: 100vh /* Full viewport height */
+  height: 100vh; /* Full viewport height */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 
 /* Centre Section */
 .centre {
-  background-color: #f1f1f1;
-  padding: 20px;
-  flex: 0 0 60%; /* Set the centre section to 60% of the width */
+  background-color: #1b1b1b;
+  padding: 30px;
+  flex: 0 0 80%; /* Set the centre section to 60% of the width */
+  overflow-y: auto;
 }
 
 /* Right Section */
-.right {
-  background-color: #04AA6D;
+/*.right {
+  background-color: #3b444a;
   padding: 20px;
-  flex: 0 0 20%; /* Set the right section to 20% of the width */
+  flex: 0 0 20%;
   position: sticky;
-  top: 60px; /* Adjust to the navbar height */
-  height: 100vh /* Full viewport height */
-}
+  top: 60px;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}*/
 
 /* Media Query for screen widths of 800px or smaller */
-@media screen and (max-width: 800px) {
-  .left,
-  .right {
+@media screen and (max-width: 1400px) {
+  .left{
     height: 80px; /* Make all sections full width when the screen is smaller than 800px */
     position:inherit;
     top: 0px;
   }
 
   .left,
-  .centre,
-  .right {
+  .centre{
     flex: 0 0 100%; /* Make all sections full width when the screen is smaller than 800px */
   }
+
+  .centre{
+    min-height: 80vh;
+  }
 }
+
 
 .merienda-400 {
   font-family: "Merienda", cursive;

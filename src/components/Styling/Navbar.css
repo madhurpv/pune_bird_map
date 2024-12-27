@@ -2,121 +2,128 @@
 
 /* Basic reset */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Navbar container */
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 60px;
-    width: 100%;
-    background-color: #333;
-    padding: 10px 20px;
-    z-index: 1000; /* Ensure navbar stays on top */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center items horizontally */
-  }
-  
-  /* Hamburger Menu */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .hamburger .line {
-    width: 25px;
-    height: 4px;
-    background-color: white;
-    margin: 5px 0;
-  }
-  
-  /* Desktop Menu (Hidden on mobile) */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #2a3736;
+  padding: 10px 20px;
+  z-index: 1000; /* Ensure navbar stays on top */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center items horizontally */
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+/* Desktop Menu (Hidden on mobile) */
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center; /* Center items horizontally */
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: #e5e5e5;
+  overflow-y: auto;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  gap: 70px;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 1400px) {
+  /* Hide the menu by default */
   .menu {
-    display: flex;
-    list-style: none;
-    justify-content: center; /* Center items horizontally */
+    display: flex; /* Keep the menu in the document flow, but hide it visually */
+    flex-direction: column; /* Stack items vertically */
+    background-color: #333;
+    position: absolute;
+    top: 60px; /* Position the menu below the navbar */
+    left: 0;
+    width: 100%;
+    padding-top: 20px;
+    gap: 10px; /* Space between menu items */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    visibility: hidden; /* Hide the menu by default */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out; /* Smooth transition */
   }
-  
-  .menu ul {
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    gap: 20px;
+
+  /* When menu is open, show it */
+  .menu.active {
+    visibility: visible; /* Make the menu visible */
+    opacity: 1; /* Fade in the menu */
+    top: 60px; /* Ensure the menu opens below the navbar */
   }
-  
-  .menu li {
-    list-style: none;
+
+  .hamburger {
+    display: flex; /* Show hamburger icon on mobile */
   }
-  
+
+  /* Style for the links in the dropdown */
   .menu a {
-    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    text-align: center;
+    display: block;
     color: white;
-    font-size: 16px;
-    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #444; /* Add divider between items */
   }
-  
-  /* Mobile-specific styles */
-  @media screen and (max-width: 800px) {
-    /* Hide the menu by default */
-    .menu {
-      display: flex; /* Keep the menu in the document flow, but hide it visually */
-      flex-direction: column; /* Stack items vertically */
-      background-color: #333;
-      position: absolute;
-      top: 60px; /* Position the menu below the navbar */
-      left: 0;
-      width: 100%;
-      padding-top: 20px;
-      gap: 10px; /* Space between menu items */
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      visibility: hidden; /* Hide the menu by default */
-      opacity: 0;
-      transition: visibility 0s, opacity 0.3s ease-in-out; /* Smooth transition */
-    }
-  
-    /* When menu is open, show it */
-    .menu.active {
-      visibility: visible; /* Make the menu visible */
-      opacity: 1; /* Fade in the menu */
-      top: 60px; /* Ensure the menu opens below the navbar */
-    }
-  
-    .hamburger {
-      display: flex; /* Show hamburger icon on mobile */
-    }
-  
-    /* Style for the links in the dropdown */
-    .menu a {
-      padding: 15px 20px;
-      font-size: 18px;
-      text-align: center;
-      display: block;
-      color: white;
-      text-decoration: none;
-      border-bottom: 1px solid #444; /* Add divider between items */
-    }
-  
-    .menu a:hover {
-      background-color: #555;
-    }
 
-    .menu ul {
-        flex-direction: column;
-        list-style: none;
-        padding: 0;
-    }
-
-    .menu li {
-    margin-bottom: 10px;
-    }
-
-    .navbar {
-        justify-content: space-between;
-    }
+  .menu a:hover {
+    background-color: #555;
   }
-  
+
+  .menu ul {
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    gap: 0px;
+  }
+
+  .menu li {
+  margin-bottom: 10px;
+  }
+
+  .navbar {
+      justify-content: space-between;
+  }
+}

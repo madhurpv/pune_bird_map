@@ -23,14 +23,12 @@ class App extends Component {
 
           
           {/* Main Layout */}
-          <div className="layout-container">
+          <div>
 
-            <Left />
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
             </Routes>
-            <Right />
 
           </div>
         </HashRouter>

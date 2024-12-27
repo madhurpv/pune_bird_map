@@ -30,9 +30,6 @@ class Navbar extends Component {
             <ul>
             <li><a href="/pune_bird_map/">Home</a></li>
             <li><a href="/pune_bird_map/#/about">About</a></li>
-            <li><a href="/pune_bird_map/#/resume">Resume</a></li>
-            <li><a href="/pune_bird_map/#/blog">Blog</a></li>
-            <li><a href="/pune_bird_map/#/contact">Contact</a></li>
             </ul>
         </div>
         </div>
