@@ -134,7 +134,9 @@ class Home extends Component {
         <div className="centre">
           <Title title="Welcome" />
           <p>This is Home. Bird = {String(this.state.birdSelected)}</p>
-          <BarChart data={monthlyData[this.state.birdSelected]}/>
+          <div style={{minHeight: 500, height: "fit-content"}}>
+            <BarChart data={monthlyData[this.state.birdSelected]} />
+          </div>
         </div>
       </div>
     );

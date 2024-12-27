@@ -29,6 +29,7 @@ class BarChart extends Component {
       },
       chartOptions: {
         responsive: true,
+        maintainAspectRatio: false,
         animation: {
           duration: 1000, // Duration for the animation
           easing: 'easeInOutQuad', // Easing function
@@ -95,7 +96,7 @@ class BarChart extends Component {
 
   render() {
     return (
-      <div style={{ width: '80%', margin: '0 auto' }}>
+      <div style={{ width: '80%', minHeight: "300px", maxHeight: "700px"}}>
         <Bar data={this.state.chartData} options={this.state.chartOptions} />
       </div>
     );
