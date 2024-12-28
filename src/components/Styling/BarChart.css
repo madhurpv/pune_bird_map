@@ -1,0 +1,14 @@
+/* Base styles for the div */
+.barchart-div {
+  width: 90%;
+  min-height: 300px;
+  max-height: 30vh; /* default max-height */
+  justify-content: center;
+}
+
+/* Media query for screens less than 1400px wide */
+@media (max-width: 1400px) {
+  .barchart-div {
+    max-height: 30vh;
+  }
+}

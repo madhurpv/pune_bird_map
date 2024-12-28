@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
+import "../components/Styling/BarChart.css"
+
 // Register necessary components from Chart.js
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -96,7 +98,7 @@ class BarChart extends Component {
 
   render() {
     return (
-      <div style={{ width: '80%', minHeight: "300px", maxHeight: "700px"}}>
+      <div className='barchart-div'>
         <Bar data={this.state.chartData} options={this.state.chartOptions} />
       </div>
     );
