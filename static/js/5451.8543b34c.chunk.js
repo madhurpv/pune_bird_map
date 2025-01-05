@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio_v1=self.webpackChunkportfolio_v1||[]).push([[5451],{5451:e=>{e.exports=JSON.parse('{"1":[{"a":18.131,"b":73.8736,"d":3}],"9":[{"a":18.446,"b":73.4266,"d":6}],"12":[{"a":18.446,"b":73.4266,"d":2}]}')}}]);
