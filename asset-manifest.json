@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pune_bird_map/static/css/main.0cfbe0b1.css",
-    "main.js": "/pune_bird_map/static/js/main.022a8355.js",
+    "main.js": "/pune_bird_map/static/js/main.42aaaa9c.js",
     "static/js/832.79ffbe3d.chunk.js": "/pune_bird_map/static/js/832.79ffbe3d.chunk.js",
     "static/js/732.1af3f4e9.chunk.js": "/pune_bird_map/static/js/732.1af3f4e9.chunk.js",
     "static/js/938.75763785.chunk.js": "/pune_bird_map/static/js/938.75763785.chunk.js",
@@ -17,11 +17,11 @@
     "static/media/logo.svg": "/pune_bird_map/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/pune_bird_map/index.html",
     "main.0cfbe0b1.css.map": "/pune_bird_map/static/css/main.0cfbe0b1.css.map",
-    "main.022a8355.js.map": "/pune_bird_map/static/js/main.022a8355.js.map",
+    "main.42aaaa9c.js.map": "/pune_bird_map/static/js/main.42aaaa9c.js.map",
     "453.20419cad.chunk.js.map": "/pune_bird_map/static/js/453.20419cad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0cfbe0b1.css",
-    "static/js/main.022a8355.js"
+    "static/js/main.42aaaa9c.js"
   ]
 }
