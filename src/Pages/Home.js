@@ -474,7 +474,6 @@ function createMonthlyData(jsonObj) {
     }
   }
 
-  console.log(result);
   return result;
 }
 
@@ -496,7 +495,7 @@ class Home extends Component {
     super(props);
     this.state = {
       loading: true,
-      birdSelected: ["Alexandrine Parakeet", "Common Cuckoo"],
+      birdsSelected: [""],
     };
   }
 
@@ -522,28 +521,27 @@ class Home extends Component {
 
       var clonedState = JSON.parse(JSON.stringify(this.state)); //Duplicate state
       delete clonedState["loading"];
-      delete clonedState["birdSelected"];
+      delete clonedState["birdsSelected"];
       //console.log(clonedState)
       monthlyData = createMonthlyData(clonedState);
 
       this.setState({ loading: false });
       await delay(2000);
-      console.log(this.state);
     }
   };
 
-  getUnusedBirdName = () => {
-    const usedBirdName = this.state.birdSelected;
-    console.log(usedBirdName);
+  setSelectedBirdList = (updatedBirdList) => {
+    this.setState({ birdsSelected: updatedBirdList });
   };
 
-  handleDropdownChange = (selected) => {
-    //console.log('Selected:', selected);
-    // if (!this.state.birdsSelected.includes(selected.label)) {
-    //   this.setState((prevState) => ({
-    //     birdsSelected: [...prevState.birdsSelected, selected.label],
-    //   }));
-    // }
+  addToSelectedBirdList = () => {
+    this.setState({ birdsSelected: [...this.state.birdsSelected, ""] });
+  };
+
+  deleteFromSelectedBirdList = (index) => {
+    const updatedBirdList = [...this.state.birdsSelected];
+    updatedBirdList.splice(index, 1);
+    this.setState({ birdsSelected: updatedBirdList });
   };
 
   render() {
@@ -563,13 +561,16 @@ class Home extends Component {
           <p>Left Menu</p>
           <SpeciesSelect
             options={files2}
-            onChange={this.handleDropdownChange}
+            selectedBirdList={this.state.birdsSelected}
+            setSelectedBirdList={this.setSelectedBirdList}
+            addToSelectedBirdList={this.addToSelectedBirdList}
+            deleteFromSelectedBirdList={this.deleteFromSelectedBirdList}
           />
         </div>
         <div className="centre">
           <Title title="Welcome" />
           <p style={{ color: "red" }}>
-            This is Home. Bird = {String(this.state.birdSelected)}
+            This is Home. Bird = {String(this.state.birdsSelected)}
           </p>
           <div
             style={{
@@ -581,7 +582,7 @@ class Home extends Component {
             }}
           >
             {/* TODO: For now only one barchart of the first selected bird is shown: make decision how to handle multiple birds*/}
-            <BarChart data={monthlyData[this.state.birdSelected[0]]} />
+            <BarChart data={monthlyData[this.state.birdsSelected[0]]} />
           </div>
 
           <div>

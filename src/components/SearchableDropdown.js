@@ -5,30 +5,41 @@ import Select from "react-select";
 class SearchableDropdown extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedOption: null, // To track the selected option
-    };
   }
 
-  handleChange = (selected) => {
-    // Update the selected option in state
-    this.setState({ selectedOption: selected });
+  handleChange = (selected, selectedBirdList, setSelectedBirdList, index) => {
+    if (selectedBirdList && setSelectedBirdList) {
+      const updatedBirdList = [...selectedBirdList];
+      updatedBirdList[index] = selected.value;
+      setSelectedBirdList(updatedBirdList);
+    }
+  };
 
-    // Call the onChange prop function if provided
-    if (this.props.onChange) {
-      this.props.onChange(selected);
+  deleteDropdown = (deleteFromSelectedBirdList, index) => {
+    if (deleteFromSelectedBirdList && index >= 0) {
+      deleteFromSelectedBirdList(index);
     }
   };
 
   render() {
-    const { options } = this.props;
-    const { selectedOption } = this.state;
+    const {
+      options,
+      selectedBirdList,
+      setSelectedBirdList,
+      index,
+      deleteFromSelectedBirdList,
+    } = this.props;
 
     // Map the array of strings into an array of objects with 'value' and 'label'
     const formattedOptions = options.map((option) => ({
       value: option,
       label: option,
     }));
+
+    // Get previously selected bird if exist
+    const selectedOption = formattedOptions.find(
+      (opt) => opt.value === selectedBirdList[index]
+    );
 
     return (
       <>
@@ -38,7 +49,14 @@ class SearchableDropdown extends Component {
         >
           <Select
             value={selectedOption}
-            onChange={this.handleChange}
+            onChange={(selected) => {
+              this.handleChange(
+                selected,
+                selectedBirdList,
+                setSelectedBirdList,
+                index
+              );
+            }}
             options={formattedOptions}
             getOptionLabel={(e) => e.label} // This tells react-select to display the 'label' property of each option
             getOptionValue={(e) => e.value} // This tells react-select to use 'value' for the selected option
@@ -76,6 +94,13 @@ class SearchableDropdown extends Component {
               }),
             }}
           />
+          <button
+            onClick={() => {
+              this.deleteDropdown(deleteFromSelectedBirdList, index);
+            }}
+          >
+            Delete
+          </button>
         </div>
       </>
     );
