@@ -12,6 +12,8 @@ let DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
+//  There seems to be some error in the data itself - data very less for 13. Total much less than expected. Need to scrutinise more
+
 class LeafletMap extends Component {
   constructor(props) {
     super(props);
