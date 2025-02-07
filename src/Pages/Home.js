@@ -32,6 +32,7 @@ var files = [
 
 var files2 = [];
 var monthlyData = {};
+var toShowData = {};
 
 function createMonthlyData(jsonObj) {
   const result = {};
@@ -132,6 +133,20 @@ class Home extends Component {
     this.setState({ birdsSelected: updatedBirdList });
   };
 
+  calculate_data(){
+    toShowData = {};
+    console.log(this.state.birdsSelected)
+    for (var i = 0; i < this.state.birdsSelected.length; i++) {
+      var name = this.state.birdsSelected[i];
+      //console.log("name = ", name)
+      if(name==="" || name==null){
+        continue;
+      }
+      toShowData[name] = this.state.DataJSON[name];
+    }
+    //console.log("toShowData = ", toShowData)
+  };
+
   render() {
     const { loading, sum } = this.state;
 
@@ -143,6 +158,7 @@ class Home extends Component {
         </div>
       );
     }
+    this.calculate_data();  // Calculates data to be shown on the map
     return (
       <div className="layout-container">
         <div className="left">
@@ -174,7 +190,7 @@ class Home extends Component {
           </div>
 
           <div>
-            <LeafletMap />
+            <LeafletMap toShowData={toShowData} />
           </div>
         </div>
       </div>
